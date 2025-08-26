@@ -9,8 +9,8 @@ import agc.playground.core.domain.models.Tag
  */
 
 interface RecipeRepository {
-    fun getAllRecipes(): Result<List<Recipe>>
-    fun getRecipe(): Result<Recipe>
-    fun searchRecipeByText(text: String): Result<List<Recipe>>
-    fun searchRecipeByTag(tags: List<Tag>): Result<List<Recipe>>
+    suspend fun getAllRecipes(): Result<List<Recipe>>
+    suspend fun getRecipe(recipeId: String): Result<Recipe>
+    suspend fun searchRecipesByText(searchQuery: String): Result<List<Recipe>>
+    suspend fun searchRecipesByTag(tag: Tag): Result<List<Recipe>>
 }

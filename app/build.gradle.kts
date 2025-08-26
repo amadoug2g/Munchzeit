@@ -5,12 +5,12 @@ plugins {
 
 android {
     namespace = "agc.playground.cookingrecipe"
-    compileSdk = 34
+    compileSdk = 36
 
     defaultConfig {
         applicationId = "agc.playground.cookingrecipe"
         minSdk = 24
-        targetSdk = 34
+        targetSdk = 36
         versionCode = 1
         versionName = "1.0"
 
@@ -41,6 +41,7 @@ dependencies {
     implementation(libs.androidx.core.ktx)
     implementation(libs.androidx.appcompat)
     implementation(libs.material)
+    implementation(libs.bundles.retrofit)
     implementation(libs.androidx.activity)
     implementation(libs.androidx.constraintlayout)
     testImplementation(libs.junit)

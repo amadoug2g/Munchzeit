@@ -8,6 +8,6 @@ import agc.playground.core.repository.RecipeRepository
  *
  */
 
-class GetRecipeByTagUC(private val repository: RecipeRepository) {
-    operator fun invoke(tags: List<Tag>) = repository.searchRecipeByTag(tags)
+class SearchRecipesByTagUC(private val repository: RecipeRepository) {
+    suspend operator fun invoke(tag: Tag) = repository.searchRecipesByTag(tag)
 }

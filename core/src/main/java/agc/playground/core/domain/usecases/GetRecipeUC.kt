@@ -8,5 +8,5 @@ import agc.playground.core.repository.RecipeRepository
  */
 
 class GetRecipeUC (private val repository: RecipeRepository) {
-    operator fun invoke() = repository.getRecipe()
+    suspend operator fun invoke(recipeId: String) = repository.getRecipe(recipeId)
 }

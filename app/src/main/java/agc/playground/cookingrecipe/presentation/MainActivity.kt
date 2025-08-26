@@ -1,5 +1,6 @@
-package agc.playground.cookingrecipe
+package agc.playground.cookingrecipe.presentation
 
+import agc.playground.cookingrecipe.R
 import android.os.Bundle
 import androidx.activity.enableEdgeToEdge
 import androidx.appcompat.app.AppCompatActivity

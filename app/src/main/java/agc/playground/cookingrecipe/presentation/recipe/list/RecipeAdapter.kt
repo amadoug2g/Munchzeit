@@ -39,7 +39,9 @@ class RecipeAdapter(
 
     companion object {
         val DIFF = object : DiffUtil.ItemCallback<Recipe>() {
-            override fun areItemsTheSame(oldItem: Recipe, newItem: Recipe) = oldItem.id == newItem.id
+            override fun areItemsTheSame(oldItem: Recipe, newItem: Recipe) =
+                oldItem.id == newItem.id
+
             override fun areContentsTheSame(oldItem: Recipe, newItem: Recipe) = oldItem == newItem
         }
     }

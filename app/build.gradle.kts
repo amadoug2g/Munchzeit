@@ -1,7 +1,9 @@
 plugins {
     alias(libs.plugins.android.application)
     alias(libs.plugins.kotlin.android)
-    id("org.jetbrains.kotlin.kapt")
+    alias(libs.plugins.kotlin.kapt)
+    alias(libs.plugins.kotlin.parcelize)
+    alias(libs.plugins.safeargs)
 }
 
 android {
@@ -47,6 +49,7 @@ dependencies {
     implementation(libs.material)
     implementation(libs.androidx.cardview)
     implementation(libs.bundles.retrofit)
+    implementation(libs.bundles.coil)
     implementation(libs.androidx.activity)
     implementation(libs.androidx.constraintlayout)
     implementation(libs.androidx.navigation.fragment.ktx)

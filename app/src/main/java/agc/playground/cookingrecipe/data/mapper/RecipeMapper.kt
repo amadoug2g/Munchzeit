@@ -1,6 +1,7 @@
 package agc.playground.cookingrecipe.data.mapper
 
 import agc.playground.cookingrecipe.data.models.RecipeDto
+import agc.playground.cookingrecipe.data.models.RecipeUiModel
 import agc.playground.core.domain.models.Recipe
 import agc.playground.core.domain.models.Tag
 
@@ -20,4 +21,9 @@ fun RecipeDto.toDomain(): Recipe = Recipe(
     tags = this.tags.mapNotNull(Tag::fromLabel),
     image = this.image,
     rating = this.rating
+)
+
+fun Recipe.toUiModel() = RecipeUiModel(
+    id, name, image, rating, difficulty,
+    ingredients, instructions, prepTimeMinutes, cookTimeMinutes
 )

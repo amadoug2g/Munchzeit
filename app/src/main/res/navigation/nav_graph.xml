@@ -8,6 +8,19 @@
     <fragment
         android:id="@+id/recipeListFragment"
         android:name="agc.playground.cookingrecipe.presentation.recipe.list.RecipeListFragment"
-        android:label="fragment_recipe_list"
-        tools:layout="@layout/fragment_recipe_list" />
+        android:label="@string/recipe_list_fragment_title"
+        tools:layout="@layout/fragment_recipe_list" >
+        <action
+            android:id="@+id/navigateToRecipeDetailFragment"
+            app:destination="@id/recipeDetailFragment" />
+    </fragment>
+    <fragment
+        android:id="@+id/recipeDetailFragment"
+        android:name="agc.playground.cookingrecipe.presentation.recipe.detail.RecipeDetailFragment"
+        android:label="@string/recipe_detail_list_fragment_title"
+        tools:layout="@layout/fragment_recipe_detail" >
+        <argument
+            android:name="currentRecipe"
+            app:argType="agc.playground.cookingrecipe.data.models.RecipeUiModel" />
+    </fragment>
 </navigation>

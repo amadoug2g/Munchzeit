@@ -11,9 +11,9 @@ activity = "1.10.1"
 constraintlayout = "2.2.1"
 jetbrainsKotlinJvm = "1.9.24"
 retrofit = "3.0.0"
-navigationFragmentKtx = "2.9.3"
-navigationUiKtx = "2.9.3"
-ksp = "2.0.21-1.0.25"
+navigation = "2.9.3"
+cardview = "1.0.0"
+coil = "3.3.0"
 
 [libraries]
 androidx-core-ktx = { group = "androidx.core", name = "core-ktx", version.ref = "coreKtx" }
@@ -26,19 +26,27 @@ androidx-activity = { group = "androidx.activity", name = "activity", version.re
 androidx-constraintlayout = { group = "androidx.constraintlayout", name = "constraintlayout", version.ref = "constraintlayout" }
 retrofit2 = { group = "com.squareup.retrofit2", name = "retrofit", version.ref = "retrofit" }
 retrofit-converter = { group = "com.squareup.retrofit2", name = "converter-gson", version.ref = "retrofit" }
-androidx-navigation-fragment-ktx = { group = "androidx.navigation", name = "navigation-fragment-ktx", version.ref = "navigationFragmentKtx" }
-androidx-navigation-ui-ktx = { group = "androidx.navigation", name = "navigation-ui-ktx", version.ref = "navigationUiKtx" }
-androidx-cardview = { group = "androidx.cardview", name = "cardview", version = "1.0.0" }
+androidx-navigation-fragment-ktx = { group = "androidx.navigation", name = "navigation-fragment-ktx", version.ref = "navigation" }
+androidx-navigation-ui-ktx = { group = "androidx.navigation", name = "navigation-ui-ktx", version.ref = "navigation" }
+androidx-cardview = { group = "androidx.cardview", name = "cardview", version.ref = "cardview" }
+coil-core = { group = "io.coil-kt.coil3", name = "coil", version.ref = "coil" }
+coil-network = { group = "io.coil-kt.coil3", name = "coil-network-okhttp", version.ref = "coil" }
 
 [bundles]
 retrofit = [
     "retrofit2",
     "retrofit-converter"
 ]
+coil = [
+    "coil-core",
+    "coil-network"
+]
 
 [plugins]
 android-application = { id = "com.android.application", version.ref = "agp" }
 kotlin-android = { id = "org.jetbrains.kotlin.android", version.ref = "kotlin" }
 jetbrains-kotlin-jvm = { id = "org.jetbrains.kotlin.jvm", version.ref = "jetbrainsKotlinJvm" }
-google-ksp = { id = "com.google.devtools.ksp", version.ref = "ksp" }
+kotlin-kapt = { id = "org.jetbrains.kotlin.kapt" }
+kotlin-parcelize = { id = "org.jetbrains.kotlin.plugin.parcelize" }
+safeargs = { id = "androidx.navigation.safeargs.kotlin", version.ref = "navigation" }
 

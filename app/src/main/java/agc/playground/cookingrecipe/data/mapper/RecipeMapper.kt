@@ -9,17 +9,15 @@ import agc.playground.core.domain.models.Tag
  *
  */
 
-class RecipeMapper {
-    fun RecipeDto.toDomain(): Recipe = Recipe(
-        id = this.id,
-        name = this.name,
-        ingredients = this.ingredients,
-        instructions = this.instructions,
-        prepTimeMinutes = this.prepTimeMinutes,
-        cookTimeMinutes = this.cookTimeMinutes,
-        difficulty = this.difficulty,
-        tags = this.tags.mapNotNull(Tag::fromLabel),
-        image = this.image,
-        rating = this.rating
-    )
-}
+fun RecipeDto.toDomain(): Recipe = Recipe(
+    id = this.id,
+    name = this.name,
+    ingredients = this.ingredients,
+    instructions = this.instructions,
+    prepTimeMinutes = this.prepTimeMinutes,
+    cookTimeMinutes = this.cookTimeMinutes,
+    difficulty = this.difficulty,
+    tags = this.tags.mapNotNull(Tag::fromLabel),
+    image = this.image,
+    rating = this.rating
+)

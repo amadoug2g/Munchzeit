@@ -2,8 +2,6 @@ package agc.playground.cookingrecipe.data.api
 
 import agc.playground.cookingrecipe.data.models.RecipeDto
 import agc.playground.cookingrecipe.data.models.RecipesResponseDto
-import agc.playground.core.domain.models.Recipe
-import agc.playground.core.domain.models.Tag
 import retrofit2.http.GET
 import retrofit2.http.Path
 import retrofit2.http.Query
@@ -15,13 +13,20 @@ import retrofit2.http.Query
 
 interface RecipeApi {
     @GET("recipes")
-    suspend fun getRecipes(): RecipesResponseDto
+    suspend fun getRecipes(
+        @Query("limit") limit: Int,
+        @Query("skip") skip: Int
+    ): RecipesResponseDto
 
     @GET("recipes/{id}")
     suspend fun getRecipe(@Path("id") id: Int): RecipeDto
 
     @GET("recipes/search")
-    suspend fun searchRecipes(@Query("q") q: String): RecipesResponseDto
+    suspend fun searchRecipes(
+        @Query("q") q: String,
+        @Query("limit") limit: Int,
+        @Query("skip") skip: Int
+    ): RecipesResponseDto
 
     @GET("recipes/tag/{tag}")
     suspend fun getRecipesByTag(@Path("tag") tag: String): RecipesResponseDto

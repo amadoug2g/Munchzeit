@@ -1,5 +1,6 @@
 package agc.playground.core.repository
 
+import agc.playground.core.domain.models.Page
 import agc.playground.core.domain.models.Recipe
 import agc.playground.core.domain.models.Tag
 
@@ -9,8 +10,8 @@ import agc.playground.core.domain.models.Tag
  */
 
 interface RecipeRepository {
-    suspend fun getAllRecipes(): Result<List<Recipe>>
+    suspend fun getAllRecipes(limit: Int, skip: Int): Result<Page<Recipe>>
     suspend fun getRecipe(recipeId: String): Result<Recipe>
-    suspend fun searchRecipesByText(searchQuery: String): Result<List<Recipe>>
+    suspend fun searchRecipesByText(searchQuery: String, limit: Int, skip: Int): Result<Page<Recipe>>
     suspend fun searchRecipesByTag(tag: Tag): Result<List<Recipe>>
 }

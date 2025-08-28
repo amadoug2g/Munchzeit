@@ -2,6 +2,8 @@ package agc.playground.cookingrecipe.data.mapper
 
 import agc.playground.cookingrecipe.data.models.RecipeDto
 import agc.playground.cookingrecipe.data.models.RecipeUiModel
+import agc.playground.cookingrecipe.data.models.RecipesResponseDto
+import agc.playground.core.domain.models.Page
 import agc.playground.core.domain.models.Recipe
 import agc.playground.core.domain.models.Tag
 
@@ -22,6 +24,14 @@ fun RecipeDto.toDomain(): Recipe = Recipe(
     image = this.image,
     rating = this.rating
 )
+
+fun RecipesResponseDto.toDomainPage(): Page<Recipe> =
+    Page(
+        items = recipes.map { it.toDomain() },
+        total = total,
+        skip = skip,
+        limit = limit
+    )
 
 fun Recipe.toUiModel() = RecipeUiModel(
     id, name, image, rating, difficulty,

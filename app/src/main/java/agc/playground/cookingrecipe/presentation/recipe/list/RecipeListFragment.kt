@@ -105,9 +105,9 @@ class RecipeListFragment : Fragment() {
                 binding.topProgressBar.visibility = if (s.loading && !s.refreshing) View.VISIBLE else View.GONE
 
                 val tint = if (s.activeTag != null)
-                    ContextCompat.getColor(requireContext(), R.color.white)
+                    ContextCompat.getColor(requireContext(), R.color.teal_active)
                 else
-                    ContextCompat.getColor(requireContext(), android.R.color.darker_gray)
+                    ContextCompat.getColor(requireContext(), R.color.gray_inactive)
                 binding.filterButton.setColorFilter(tint)
             }
         }

@@ -5,5 +5,5 @@
         <!-- <item name="colorPrimary">@color/my_light_primary</item> -->
     </style>
 
-    <style name="Theme.CookingRecipe" parent="Base.Theme.CookingRecipe" />
+    <style name="Theme.MunchZeit" parent="Base.Theme.CookingRecipe" />
 </resources>

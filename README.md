@@ -1,6 +1,6 @@
 # MunchZeit
 
-[![Android CI](https://github.com/amadoug2g/MunchZeit/actions/workflows/android-ci.yml/badge.svg)](https://github.com/amadoug2g/MunchZeit/actions/workflows/android-ci.yml)
+[![Android CI](https://github.com/amadoug2g/MunchZeit/actions/workflows/android.yml/badge.svg)](https://github.com/amadoug2g/MunchZeit/actions/workflows/android.yml)
 
 A modern Android app to discover and explore recipes
 
